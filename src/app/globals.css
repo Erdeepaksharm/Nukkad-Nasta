@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 20 14% 10%;
+    --foreground: 36 33% 92%;
+  }
+
+  body {
+    @apply bg-[#1a1209] text-amber-50 antialiased;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-stone-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-amber-700 rounded-full; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-amber-500 hover:bg-amber-400 text-stone-900 font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-stone-800 hover:bg-stone-700 text-amber-100 font-semibold px-6 py-2.5 rounded-xl transition-all duration-200 active:scale-95;
+  }
+  .btn-outline {
+    @apply border border-amber-500/50 hover:border-amber-400 text-amber-400 hover:text-amber-300 px-6 py-2.5 rounded-xl transition-all duration-200 active:scale-95;
+  }
+  .card {
+    @apply bg-stone-900 border border-stone-800 rounded-2xl p-6;
+  }
+  .input {
+    @apply w-full bg-stone-800 border border-stone-700 text-amber-50 rounded-xl px-4 py-3 placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 transition-all;
+  }
+  .badge-veg {
+    @apply inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded border border-green-500 text-green-400;
+  }
+  .badge-nonveg {
+    @apply inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded border border-red-500 text-red-400;
+  }
+}
